@@ -1,0 +1,25 @@
+﻿<Window x:Class="ProjektZProgramowania.Registry"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjektZProgramowania"
+        mc:Ignorable="d"
+        Title="Registry" Height="650" Width="1000">
+    <Grid Margin="0,0,0,-6" Background="White">
+        <Image HorizontalAlignment="Left" Height="365" Margin="36,111,0,0" VerticalAlignment="Top" Width="365" Source="/headset-gd35ee978d_1280.png"/>
+        <TextBox x:Name="registryEmail" HorizontalAlignment="Left" Margin="528,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Height="30" Width="168"/>
+        <Label Content="Email" HorizontalAlignment="Left" Margin="528,61,0,0" VerticalAlignment="Top" Height="36" Width="62" FontSize="20"/>
+        <TextBox x:Name="registryFirstName" HorizontalAlignment="Left" Margin="528,186,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Height="30" Width="168"/>
+        <Label Content="First Name&#xA;&#xA;" HorizontalAlignment="Left" Margin="528,150,0,0" VerticalAlignment="Top" Height="36" Width="105" FontSize="20"/>
+        <TextBox x:Name="registryLastName" HorizontalAlignment="Left" Margin="530,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Height="30" Width="168"/>
+        <Label Content="Last Name&#xA;" HorizontalAlignment="Left" Margin="524,244,0,0" VerticalAlignment="Top" Height="36" Width="119" FontSize="20"/>
+        <TextBox x:Name="registryPassword" HorizontalAlignment="Left" Margin="525,375,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Height="30" Width="168"/>
+        <Label Content="Password&#xA;" HorizontalAlignment="Left" Margin="525,339,0,0" VerticalAlignment="Top" Height="36" Width="97" FontSize="20"/>
+        <TextBox x:Name="registryAddress" HorizontalAlignment="Left" Margin="521,466,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Height="30" Width="168"/>
+        <Label Content="Address" HorizontalAlignment="Left" Margin="521,430,0,0" VerticalAlignment="Top" Height="36" Width="89" FontSize="20"/>
+        <Button x:Name="RegisterButton" Content="Register" HorizontalAlignment="Left" Margin="760,208,0,0" VerticalAlignment="Top" Height="57" Width="144" Click="RegistryButton_Click" FontSize="20" FontWeight="Bold" Background="#FF4E39E8"/>
+        <Button x:Name="BackToLogIn" Content="Back To LogIn" HorizontalAlignment="Left" Margin="765,320,0,0" VerticalAlignment="Top" Height="57" Width="144" Click="BackToLogInClick" FontSize="20" Background="#FF4E39E8" FontWeight="Bold"/>
+
+    </Grid>
+</Window>
