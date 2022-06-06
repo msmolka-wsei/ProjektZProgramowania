@@ -1,0 +1,19 @@
+﻿<Window x:Class="ProjektZProgramowania.UserMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjektZProgramowania"
+        mc:Ignorable="d"
+        Title="UserMenu" Height="650" Width="1000">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush/>
+        </Grid.Background>
+        <Button x:Name="CreateNotification" Content="Create Notification" HorizontalAlignment="Left" Margin="666,130,0,0" VerticalAlignment="Top" Height="74" Width="205" FontSize="20" Click="CreateNotification_Click" Background="#FF4E39E8" FontWeight="Bold"/>
+        <Button x:Name="ShowNotifications" Content="Show Notifications" HorizontalAlignment="Left" Margin="666,0,0,0" VerticalAlignment="Center" Height="74" Width="205" FontSize="20" Click="CreateNotification_Click" Background="#FF4E39E8" FontWeight="Bold"/>
+        <Button x:Name="LogOut" Content="Log Out" HorizontalAlignment="Left" Margin="666,444,0,0" VerticalAlignment="Top" Height="74" Width="205" FontSize="20" Click="LogOut_Click" Background="#FF0E0078" FontWeight="Bold" Foreground="White"/>
+        <Image Margin="71,134,562,133" Source="/headset-gd35ee978d_1280.png" Stretch="Fill"/>
+
+    </Grid>
+</Window>

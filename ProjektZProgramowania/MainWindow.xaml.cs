@@ -42,5 +42,14 @@ namespace ProjektZProgramowania
             
             this.Close();
         }
+
+        private void LogInButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            UserMenu userMenu = new UserMenu();
+            userMenu.Show();
+
+            this.Close();
+        }
     }
 }
