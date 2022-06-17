@@ -19,7 +19,8 @@ namespace ProjektZProgramowania.Enities
 
         public string title { get; set; }
         public string description { get; set; }
-        public User creator { get; set; }
+        public User? creator { get; set; }
+        public long? creatorId { get; set; }
         public PriorityType priority { get; set; }
 
     }

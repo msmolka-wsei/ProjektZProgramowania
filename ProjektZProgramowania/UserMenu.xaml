@@ -11,7 +11,7 @@
             <ImageBrush/>
         </Grid.Background>
         <Button x:Name="CreateNotification" Content="Create Notification" HorizontalAlignment="Left" Margin="666,130,0,0" VerticalAlignment="Top" Height="74" Width="205" FontSize="20" Click="CreateNotification_Click" Background="#FF4E39E8" FontWeight="Bold"/>
-        <Button x:Name="ShowNotifications" Content="Show Notifications" HorizontalAlignment="Left" Margin="666,0,0,0" VerticalAlignment="Center" Height="74" Width="205" FontSize="20" Click="CreateNotification_Click" Background="#FF4E39E8" FontWeight="Bold"/>
+        <Button x:Name="ShowNotifications" Content="Show Notifications" HorizontalAlignment="Left" Margin="666,0,0,0" VerticalAlignment="Center" Height="74" Width="205" FontSize="20" Click="ShowNotification_Click" Background="#FF4E39E8" FontWeight="Bold"/>
         <Button x:Name="LogOut" Content="Log Out" HorizontalAlignment="Left" Margin="666,444,0,0" VerticalAlignment="Top" Height="74" Width="205" FontSize="20" Click="LogOut_Click" Background="#FF0E0078" FontWeight="Bold" Foreground="White"/>
         <Image Margin="71,134,562,133" Source="/headset-gd35ee978d_1280.png" Stretch="Fill"/>
 

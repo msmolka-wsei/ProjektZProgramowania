@@ -234,7 +234,7 @@ namespace ProjektZProgramowania.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long?>("id"), 1L, 1);
 
-                    b.Property<long>("creatorid")
+                    b.Property<long?>("creatorId")
                         .HasColumnType("bigint");
 
                     b.Property<string>("description")
@@ -250,7 +250,7 @@ namespace ProjektZProgramowania.Migrations
 
                     b.HasKey("id");
 
-                    b.HasIndex("creatorid");
+                    b.HasIndex("creatorId");
 
                     b.ToTable("NotificationUsers");
                 });
@@ -350,9 +350,8 @@ namespace ProjektZProgramowania.Migrations
                 {
                     b.HasOne("ProjektZProgramowania.Enities.User", "creator")
                         .WithMany()
-                        .HasForeignKey("creatorid")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("creatorId")
+                        .OnDelete(DeleteBehavior.NoAction);
 
                     b.Navigation("creator");
                 });

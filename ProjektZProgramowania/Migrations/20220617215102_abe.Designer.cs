@@ -12,8 +12,8 @@ using ProjektZProgramowania.Data;
 namespace ProjektZProgramowania.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220617191624_abc")]
-    partial class abc
+    [Migration("20220617215102_abe")]
+    partial class abe
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -236,7 +236,7 @@ namespace ProjektZProgramowania.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long?>("id"), 1L, 1);
 
-                    b.Property<long>("creatorid")
+                    b.Property<long?>("creatorId")
                         .HasColumnType("bigint");
 
                     b.Property<string>("description")
@@ -252,7 +252,7 @@ namespace ProjektZProgramowania.Migrations
 
                     b.HasKey("id");
 
-                    b.HasIndex("creatorid");
+                    b.HasIndex("creatorId");
 
                     b.ToTable("NotificationUsers");
                 });
@@ -352,9 +352,8 @@ namespace ProjektZProgramowania.Migrations
                 {
                     b.HasOne("ProjektZProgramowania.Enities.User", "creator")
                         .WithMany()
-                        .HasForeignKey("creatorid")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("creatorId")
+                        .OnDelete(DeleteBehavior.NoAction);
 
                     b.Navigation("creator");
                 });

@@ -56,7 +56,7 @@ namespace ProjektZProgramowania
 
             IDataService<User> userService = new GenericDataService<User>(new ApplicationDbContextFactory());
             User user = userService.Get(emailTemp);
-            Console.WriteLine(user);
+            
             if (user == null)
             {
                 string messageBoxText = "There is no such user.";
@@ -71,7 +71,7 @@ namespace ProjektZProgramowania
                 if (user.password == passwordTemp)
                 {
                     this.Hide();
-                    UserMenu userMenu = new UserMenu();
+                    UserMenu userMenu = new UserMenu(user.id);
                     userMenu.Show();
                     this.Close();
                 }

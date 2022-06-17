@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ProjektZProgramowania.Migrations
 {
-    public partial class abc : Migration
+    public partial class abe : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -101,18 +101,17 @@ namespace ProjektZProgramowania.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     title = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    creatorid = table.Column<long>(type: "bigint", nullable: false),
+                    creatorId = table.Column<long>(type: "bigint", nullable: true),
                     priority = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_NotificationUsers", x => x.id);
                     table.ForeignKey(
-                        name: "FK_NotificationUsers_Users_creatorid",
-                        column: x => x.creatorid,
+                        name: "FK_NotificationUsers_Users_creatorId",
+                        column: x => x.creatorId,
                         principalTable: "Users",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "id");
                 });
 
             migrationBuilder.CreateTable(
@@ -245,9 +244,9 @@ namespace ProjektZProgramowania.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_NotificationUsers_creatorid",
+                name: "IX_NotificationUsers_creatorId",
                 table: "NotificationUsers",
-                column: "creatorid");
+                column: "creatorId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

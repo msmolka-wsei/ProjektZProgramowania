@@ -19,6 +19,12 @@ namespace ProjektZProgramowania.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Notification>()
+                .HasOne(u => u.creator)
+                .WithMany()
+                .HasForeignKey(u => u.creatorId)
+                .OnDelete(DeleteBehavior.NoAction);
+
             base.OnModelCreating(modelBuilder);
         }
 

@@ -8,11 +8,17 @@
         Title="AddNotification" Height="650" Width="1000">
     <Grid>
         <Image Margin="71,134,562,133" Source="/headset-gd35ee978d_1280.png" Stretch="Fill"/>
-        <TextBox HorizontalAlignment="Left" Margin="628,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="306" FontSize="18"/>
-        <Label Content="Title" HorizontalAlignment="Left" Margin="628,150,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <Label Content="Description" HorizontalAlignment="Left" Margin="628,249,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <TextBox HorizontalAlignment="Left" Margin="628,291,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="306" Height="175" FontSize="18"/>
-        <Button Content="Submit" HorizontalAlignment="Left" Margin="628,538,0,0" VerticalAlignment="Top" FontSize="20" Height="53" Width="110" Click="Button_Click"/>
+        <TextBox x:Name="TitleBox" HorizontalAlignment="Left" Margin="628,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="306" FontSize="18"/>
+        <Label Content="Title" HorizontalAlignment="Left" Margin="628,84,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Label Content="Description" HorizontalAlignment="Left" Margin="628,254,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <TextBox x:Name="DescriptionBox" HorizontalAlignment="Left" Margin="628,291,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="306" Height="175" FontSize="18"/>
+        <Button Content="Submit" HorizontalAlignment="Left" Margin="628,538,0,0" VerticalAlignment="Top" FontSize="20" Height="53" Width="110" Click="SubmitNotification"/>
         <Button Content="Back" HorizontalAlignment="Left" Margin="824,538,0,0" VerticalAlignment="Top" FontSize="20" Height="53" Width="110" Click="BackToUserMenu"/>
+        <ComboBox x:Name="ComboBoxValue" HorizontalAlignment="Left" Margin="628,216,0,0" VerticalAlignment="Top" Width="120" FontSize="18">
+            <ComboBoxItem x:Name="ComboBoxLow" Content="Low"/>
+            <ComboBoxItem x:Name="ComboBoxMedium" Content="Medium"/>
+            <ComboBoxItem x:Name="ComboBoxHigh" Content="High"/>
+        </ComboBox>
+        <Label Content="Priority" HorizontalAlignment="Left" Margin="628,179,0,0" VerticalAlignment="Top" FontSize="20"/>
     </Grid>
 </Window>
