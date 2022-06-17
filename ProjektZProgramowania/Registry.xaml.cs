@@ -38,17 +38,32 @@ namespace ProjektZProgramowania
             this.Close();
         }
 
-        
+
 
         private void RegistryButton_Click(object sender, RoutedEventArgs e)
         {
-            IDataService<User> userService = new GenericDataService<User>(new ApplicationDbContextFactory());
-            User user = new User() { firstName = registryFirstName.Text, lastName = registryLastName.Text, email = registryEmail.Text, address = registryAddress.Text };
-            userService.Create(user).Wait();
-
-           // ApplicationUser applicationUser = new ApplicationUser { Email = registryEmail.Text, UserName = registryEmail.Text, UserId = user.id};
-
-            //_userManager.CreateAsync(applicationUser, registryPassword.Text);
+            if (registryFirstName.Text.Length == 0 || registryLastName.Text.Length == 0 || registryEmail.Text.Length == 0 || registryAddress.Text.Length == 0)
+            {
+                string messageBoxText = "Introduced incorrect data.";
+                string caption = "Warning";
+                MessageBoxButton button = MessageBoxButton.OK;
+                MessageBoxImage icon = MessageBoxImage.Warning;
+                MessageBoxResult result;
+                result = MessageBox.Show(messageBoxText, caption, button, icon, MessageBoxResult.Yes);
+            }
+            else
+            {
+                IDataService<User> userService = new GenericDataService<User>(new ApplicationDbContextFactory());
+                User user = new User() { firstName = registryFirstName.Text, lastName = registryLastName.Text, email = registryEmail.Text, address = registryAddress.Text, password = registryPassword.Text};
+                userService.Create(user).Wait();
+                
+                string messageBoxText = "Welcome.";
+                string caption = "Welcome";
+                MessageBoxButton button = MessageBoxButton.OK;
+                MessageBoxImage icon = MessageBoxImage.Warning;
+                MessageBoxResult result;
+                result = MessageBox.Show(messageBoxText, caption, button, icon, MessageBoxResult.Yes);
+            }
         }
 
     }

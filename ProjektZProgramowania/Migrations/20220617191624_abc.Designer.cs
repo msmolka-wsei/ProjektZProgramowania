@@ -12,8 +12,8 @@ using ProjektZProgramowania.Data;
 namespace ProjektZProgramowania.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220603194813_migmig2")]
-    partial class migmig2
+    [Migration("20220617191624_abc")]
+    partial class abc
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

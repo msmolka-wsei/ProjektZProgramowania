@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjektZProgramowania.Enities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,8 @@ namespace ProjektZProgramowania.Services
     {
         public Task<T> Create(T entity);
         public Task<T> Update(T entity);
-        public Task<T> Get(long id);
+        public User Get(long id);
+        public User Get(string email);
         public Task<bool> Delete(long id);
         public Task<IEnumerable<T>> GetAll();
         public Task<T> Update(int id, T entity);

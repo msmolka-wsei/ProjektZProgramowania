@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using ProjektZProgramowania.Data;
 using ProjektZProgramowania.Enities;
+using ProjektZProgramowania.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +24,11 @@ namespace ProjektZProgramowania
     /// </summary>
     public partial class MainWindow : Window
     {
-       // private readonly UserManager<ApplicationUser> _userManager;
+        
+
+        
+
+        // private readonly UserManager<ApplicationUser> _userManager;
         public MainWindow() //UserManager<ApplicationUser> userManager
         {
            // _userManager = userManager;
@@ -45,11 +51,42 @@ namespace ProjektZProgramowania
 
         private void LogInButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Hide();
-            UserMenu userMenu = new UserMenu();
-            userMenu.Show();
+            string emailTemp = email.Text;
+            string passwordTemp = password.Text;
 
-            this.Close();
+            IDataService<User> userService = new GenericDataService<User>(new ApplicationDbContextFactory());
+            User user = userService.Get(emailTemp);
+            Console.WriteLine(user);
+            if (user == null)
+            {
+                string messageBoxText = "There is no such user.";
+                string caption = "Warning";
+                MessageBoxButton button = MessageBoxButton.OK;
+                MessageBoxImage icon = MessageBoxImage.Warning;
+                MessageBoxResult result;
+                result = MessageBox.Show(messageBoxText, caption, button, icon, MessageBoxResult.Yes);
+            }
+            else
+            {
+                if (user.password == passwordTemp)
+                {
+                    this.Hide();
+                    UserMenu userMenu = new UserMenu();
+                    userMenu.Show();
+                    this.Close();
+                }
+                else
+                {
+                    string messageBoxText = "Wrong password.";
+                    string caption = "Warning";
+                    MessageBoxButton button = MessageBoxButton.OK;
+                    MessageBoxImage icon = MessageBoxImage.Warning;
+                    MessageBoxResult result;
+                    result = MessageBox.Show(messageBoxText, caption, button, icon, MessageBoxResult.Yes);
+                }
+            }
+
+
         }
     }
 }

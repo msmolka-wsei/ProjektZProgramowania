@@ -1,0 +1,18 @@
+﻿<Window x:Class="ProjektZProgramowania.AddNotification"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjektZProgramowania"
+        mc:Ignorable="d"
+        Title="AddNotification" Height="650" Width="1000">
+    <Grid>
+        <Image Margin="71,134,562,133" Source="/headset-gd35ee978d_1280.png" Stretch="Fill"/>
+        <TextBox HorizontalAlignment="Left" Margin="628,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="306" FontSize="18"/>
+        <Label Content="Title" HorizontalAlignment="Left" Margin="628,150,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Label Content="Description" HorizontalAlignment="Left" Margin="628,249,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <TextBox HorizontalAlignment="Left" Margin="628,291,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="306" Height="175" FontSize="18"/>
+        <Button Content="Submit" HorizontalAlignment="Left" Margin="628,538,0,0" VerticalAlignment="Top" FontSize="20" Height="53" Width="110" Click="Button_Click"/>
+        <Button Content="Back" HorizontalAlignment="Left" Margin="824,538,0,0" VerticalAlignment="Top" FontSize="20" Height="53" Width="110" Click="BackToUserMenu"/>
+    </Grid>
+</Window>

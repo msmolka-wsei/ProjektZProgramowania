@@ -43,12 +43,22 @@ namespace ProjektZProgramowania.Services
             }
         }
 
-        public async Task<T> Get(long id)
+        public User Get(long id)
         {
             using (ApplicationDbContext context = _applicationDbContextFactory.CreateDbContext())
             {
 
-                T entity = await context.Set<T>().FirstOrDefaultAsync((e) => e.id == id);
+                User entity = context.Users.First(e => e.id == id);
+                return entity;
+            }
+        }
+
+        public User Get(string email)
+        {
+            using (ApplicationDbContext context = _applicationDbContextFactory.CreateDbContext())
+            {
+
+                User entity = context.Users.FirstOrDefault((e) => e.email == email);
                 return entity;
             }
         }
