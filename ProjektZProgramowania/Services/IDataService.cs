@@ -14,7 +14,7 @@ namespace ProjektZProgramowania.Services
         public User Get(long id);
         public User Get(string email);
         public Task<bool> Delete(long id);
-        public Task<IEnumerable<T>> GetAll();
+        public IEnumerable<T> GetAll();
         public Task<T> Update(int id, T entity);
     }
 }

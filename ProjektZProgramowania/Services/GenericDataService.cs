@@ -63,12 +63,12 @@ namespace ProjektZProgramowania.Services
             }
         }
 
-        public async Task<IEnumerable<T>> GetAll()
+        public IEnumerable<T> GetAll()
         {
             using (ApplicationDbContext context = _applicationDbContextFactory.CreateDbContext())
             {
 
-                IEnumerable<T> entities = await context.Set<T>().ToListAsync();
+                IEnumerable<T> entities = context.Set<T>().ToList();
                 return entities;
             }
         }

@@ -1,5 +1,9 @@
-﻿using System;
+﻿using ProjektZProgramowania.Data;
+using ProjektZProgramowania.Enities;
+using ProjektZProgramowania.Services;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,11 +34,47 @@ namespace ProjektZProgramowania
             {
                 throw new NullReferenceException();
             }
+
+            
+            //ListBoxNotifications.ItemsSource = notificationList.ToList();
             InitializeComponent();
         }
+
         public ShowNotifications()
         {
             InitializeComponent();
+        }
+
+        private void BackToMenu(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            UserMenu userMenu = new UserMenu(userId);
+            userMenu.Show();
+            this.Close();
+        }
+
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+
+        }
+
+        private void gridNotifications_Loaded(object sender, RoutedEventArgs e)
+        {
+            IDataService<Notification> notificationService = new GenericDataService<Notification>(new ApplicationDbContextFactory());
+            IEnumerable<Notification> notificationList = notificationService.GetAll();
+
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Id");
+            dt.Columns.Add("Title");
+            dt.Columns.Add("Description");
+            dt.Columns.Add("Priority");
+            foreach (Notification notification in notificationList)
+            {
+                dt.Rows.Add(notification.id, notification.title, notification.description, notification.priority);
+            }
+
+            gridNotifications.DataContext = dt.DefaultView;
         }
     }
 }
