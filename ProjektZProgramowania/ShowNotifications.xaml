@@ -9,7 +9,10 @@
     <Grid>
         <Image Margin="71,134,562,133" Source="/headset-gd35ee978d_1280.png" Stretch="Fill"/>
         <Button Content="Back" HorizontalAlignment="Left" Margin="812,506,0,0" VerticalAlignment="Top" FontSize="20" Height="53" Width="110" Click="BackToMenu"/>
-        
-        <DataGrid Name="gridNotifications" ItemsSource="{Binding}" Loaded="gridNotifications_Loaded" Margin="492,94,92,170"></DataGrid>   
+
+        <DataGrid Name="gridNotifications" ItemsSource="{Binding}" Loaded="gridNotifications_Loaded" Margin="492,94,92,170"></DataGrid>
+        <Button Content="Delete" HorizontalAlignment="Left" Margin="429,509,0,0" VerticalAlignment="Top" FontSize="20" Height="53" Width="110" Click="DeleteNotification"/>
+        <Label Content="Enter Id&#xD;&#xA;" HorizontalAlignment="Left" Margin="567,482,0,0" VerticalAlignment="Top" FontSize="20" Height="39" Width="84"/>
+        <TextBox x:Name="EnterId" HorizontalAlignment="Left" Margin="557,516,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127" Height="41" FontSize="18"/>
     </Grid>
 </Window>

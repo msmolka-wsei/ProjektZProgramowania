@@ -62,7 +62,7 @@ namespace ProjektZProgramowania
         private void gridNotifications_Loaded(object sender, RoutedEventArgs e)
         {
             IDataService<Notification> notificationService = new GenericDataService<Notification>(new ApplicationDbContextFactory());
-            IEnumerable<Notification> notificationList = notificationService.GetAll();
+            IEnumerable<Notification> notificationList = notificationService.GettAllNotification(userId);
 
             DataTable dt = new DataTable();
             dt.Columns.Add("Id");
@@ -75,6 +75,20 @@ namespace ProjektZProgramowania
             }
 
             gridNotifications.DataContext = dt.DefaultView;
+        }
+
+        private void DeleteNotification(object sender, RoutedEventArgs e)
+        {
+            IDataService<Notification> notificationService = new GenericDataService<Notification>(new ApplicationDbContextFactory());
+            IEnumerable<Notification> notificationList = notificationService.GettAllNotification(userId);
+
+            notificationService.DeleteButBetterThanPrevorious(userId, long.Parse(EnterId.Text));
+
+            this.Hide();
+            ShowNotifications showNotifications = new ShowNotifications(userId);
+            showNotifications.Show();
+            this.Close();
+            
         }
     }
 }

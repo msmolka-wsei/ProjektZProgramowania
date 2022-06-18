@@ -14,7 +14,9 @@ namespace ProjektZProgramowania.Services
         public User Get(long id);
         public User Get(string email);
         public Task<bool> Delete(long id);
+        public bool DeleteButBetterThanPrevorious(long userId, long notificationId);
         public IEnumerable<T> GetAll();
+        public IEnumerable<Notification> GettAllNotification(long Id);
         public Task<T> Update(int id, T entity);
     }
 }

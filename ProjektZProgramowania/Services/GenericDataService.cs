@@ -7,6 +7,7 @@ using ProjektZProgramowania.Enities;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace ProjektZProgramowania.Services
 {
@@ -42,8 +43,31 @@ namespace ProjektZProgramowania.Services
                 return true;
             }
         }
-
-        public User Get(long id)
+        public bool DeleteButBetterThanPrevorious(long userId, long notificationId)
+        {
+            using (ApplicationDbContext context = _applicationDbContextFactory.CreateDbContext())
+            {
+                Notification entity = context.NotificationUsers.Find(notificationId);
+                if (entity.creatorId != userId)
+                {
+                    string messageBoxText = "You can not delete this.";
+                    string caption = "Warning";
+                    MessageBoxButton button = MessageBoxButton.OK;
+                    MessageBoxImage icon = MessageBoxImage.Warning;
+                    MessageBoxResult result;
+                    result = MessageBox.Show(messageBoxText, caption, button, icon, MessageBoxResult.Yes);
+                }
+                else
+                {
+                    context.NotificationUsers.Remove(entity);
+                    context.SaveChanges();
+                    return true;
+                }
+                return false;
+                
+            }
+        }
+         public User Get(long id)
         {
             using (ApplicationDbContext context = _applicationDbContextFactory.CreateDbContext())
             {
@@ -70,6 +94,15 @@ namespace ProjektZProgramowania.Services
 
                 IEnumerable<T> entities = context.Set<T>().ToList();
                 return entities;
+            }
+        }
+
+        public IEnumerable<Notification> GettAllNotification(long Id)
+        {
+            using (ApplicationDbContext context = _applicationDbContextFactory.CreateDbContext())
+            {
+                IEnumerable<Notification> notificationList = context.NotificationUsers.Where(n => n.creatorId == Id).ToList();
+                return notificationList;
             }
         }
 
