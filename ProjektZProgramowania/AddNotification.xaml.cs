@@ -72,8 +72,8 @@ namespace ProjektZProgramowania
                 Notification notification = new() { title = TitleBox.Text, description = DescriptionBox.Text, priority = Enum.Parse<PriorityType>(ComboBoxValue.Text), creatorId = userId};
                 notificationService.Create(notification).Wait();
 
-                string messageBoxText = "Welcome.";
-                string caption = "Welcome";
+                string messageBoxText = "Done.";
+                string caption = "Done";
                 MessageBoxButton button = MessageBoxButton.OK;
                 MessageBoxImage icon = MessageBoxImage.Warning;
                 MessageBoxResult result;

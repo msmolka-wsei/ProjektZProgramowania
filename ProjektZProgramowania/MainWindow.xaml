@@ -11,7 +11,7 @@
             <ImageBrush ImageSource="/video-call-g7f1eb229e_1280.png"/>
         </Grid.Background>
         <TextBox x:Name="email" HorizontalAlignment="Left" Margin="691,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" Height="31" TextChanged="email_TextChanged" FontSize="18"/>
-        <TextBox x:Name="password" HorizontalAlignment="Left" Margin="691,257,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" Height="31" FontSize="18"/>
+        <TextBox x:Name="password" HorizontalAlignment="Left" Margin="691,257,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" Height="31" FontSize="18" TextChanged="password_TextChanged" Foreground="Transparent" Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}" FontFamily="Consolas" />
         <Label x:Name="emailLabel" Content="Email" HorizontalAlignment="Left" Margin="691,142,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Normal"/>
         <Label x:Name="passwordLabel" Content="Password" HorizontalAlignment="Left" Margin="691,220,0,0" VerticalAlignment="Top" FontSize="20"/>
         <Button x:Name="LogInButton" Content="LogIn" HorizontalAlignment="Left" Margin="691,317,0,0" VerticalAlignment="Top" Height="37" Width="89" FontSize="18" FontWeight="Bold" Background="#FF4E39E8" Click="LogInButton_Click"/>

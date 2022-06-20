@@ -82,12 +82,27 @@ namespace ProjektZProgramowania
             IDataService<Notification> notificationService = new GenericDataService<Notification>(new ApplicationDbContextFactory());
             IEnumerable<Notification> notificationList = notificationService.GettAllNotification(userId);
 
-            notificationService.DeleteButBetterThanPrevorious(userId, long.Parse(EnterId.Text));
+            int deleteButtonValue = EnterId.Text.Length;
+            
+            if(deleteButtonValue == 0)
+            {
+                string messageBoxText = "Wrong ID.";
+                string caption = "Warning";
+                MessageBoxButton button = MessageBoxButton.OK;
+                MessageBoxImage icon = MessageBoxImage.Warning;
+                MessageBoxResult result;
+                result = MessageBox.Show(messageBoxText, caption, button, icon, MessageBoxResult.Yes);
+            }
+            else
+            {
+                notificationService.DeleteButBetterThanPrevorious(userId, long.Parse(EnterId.Text));
 
-            this.Hide();
-            ShowNotifications showNotifications = new ShowNotifications(userId);
-            showNotifications.Show();
-            this.Close();
+                this.Hide();
+                ShowNotifications showNotifications = new ShowNotifications(userId);
+                showNotifications.Show();
+                this.Close();
+            }
+            
             
         }
     }

@@ -57,7 +57,7 @@ namespace ProjektZProgramowania
                 User user = new User() { firstName = registryFirstName.Text, lastName = registryLastName.Text, email = registryEmail.Text, address = registryAddress.Text, password = registryPassword.Text};
                 userService.Create(user).Wait();
                 
-                string messageBoxText = "Welcome.";
+                string messageBoxText = "Welcome new user.";
                 string caption = "Welcome";
                 MessageBoxButton button = MessageBoxButton.OK;
                 MessageBoxImage icon = MessageBoxImage.Warning;

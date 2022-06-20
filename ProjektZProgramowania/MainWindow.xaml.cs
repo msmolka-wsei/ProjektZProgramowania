@@ -88,5 +88,10 @@ namespace ProjektZProgramowania
 
 
         }
+
+        private void password_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
