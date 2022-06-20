@@ -16,6 +16,7 @@
         <Label x:Name="passwordLabel" Content="Password" HorizontalAlignment="Left" Margin="691,220,0,0" VerticalAlignment="Top" FontSize="20"/>
         <Button x:Name="LogInButton" Content="LogIn" HorizontalAlignment="Left" Margin="691,317,0,0" VerticalAlignment="Top" Height="37" Width="89" FontSize="18" FontWeight="Bold" Background="#FF4E39E8" Click="LogInButton_Click"/>
         <Button x:Name="RegisterLogin" Content="Register" HorizontalAlignment="Left" Margin="803,317,0,0" VerticalAlignment="Top" Height="37" Width="89" FontSize="18" FontWeight="Bold" Background="#FF4E39E8" Click="RegisterClick"/>
+        <Label Content="Copyright © 2022 by Michał Smółka" HorizontalAlignment="Center" Margin="0,601,0,0" VerticalAlignment="Top" FontSize="14" Foreground="#FFFFFFFD"/>
 
     </Grid>
 </Window>

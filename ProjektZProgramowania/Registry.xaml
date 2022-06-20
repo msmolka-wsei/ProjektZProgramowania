@@ -22,6 +22,8 @@
         <Label Content="Address" HorizontalAlignment="Left" Margin="153,355,0,0" VerticalAlignment="Top" Height="36" Width="89" FontSize="16" RenderTransformOrigin="0.6,-2.454"/>
         <Button x:Name="RegisterButton" Content="Register" HorizontalAlignment="Left" Margin="712,182,0,0" VerticalAlignment="Top" Height="57" Width="144" Click="RegistryButton_Click" FontSize="20" FontWeight="Bold" Background="#FF4E39E8"/>
         <Button x:Name="BackToLogIn" Content="Back To LogIn" HorizontalAlignment="Left" Margin="712,320,0,0" VerticalAlignment="Top" Height="57" Width="144" Click="BackToLogInClick" FontSize="20" Background="#FF4E39E8" FontWeight="Bold"/>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="510,610,0,0" VerticalAlignment="Top"/>
+        <Label Content="Copyright © 2022 by Michał Smółka" HorizontalAlignment="Left" Margin="388,607,0,0" VerticalAlignment="Top" FontSize="14" Foreground="#FFFFFFFD"/>
 
     </Grid>
 </Window>
